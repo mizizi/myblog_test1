@@ -11,8 +11,8 @@ $(() => {
     // 注册
     $('#signup-form').on('submit', function (e) {
         e.preventDefault()
-        let data = $('#login-form').serialize()
-        $.post('http://localhost:3000/users/signup', data, function (res) {
+        let data = $('#signup - form').serialize()
+        $.post('http://localhost:3000/users/register', data, function (res) {
             console.log(res);
         })
         console.log(data);
