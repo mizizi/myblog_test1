@@ -1,12 +1,24 @@
 $(() => {
-    $('#login-form').on('submit', function (e) {
+    // 登录
+    $('#signin-form').on('submit', function (e) {
         e.preventDefault()
-        let data = $('#login-form').serialize()
-        $.post('http://localhost:8081/login', data, function (res) {
+        let data = $('#signin-form').serialize()
+        $.post('http://localhost:3000/users/login', data, function (res) {
             console.log(res);
         })
-        $('#login-form')[0].reset()
+        // $('#login-form')[0].reset()
     })
+    // 注册
+    $('#signup-form').on('submit', function (e) {
+        e.preventDefault()
+        let data = $('#login-form').serialize()
+        $.post('http://localhost:3000/users/signup', data, function (res) {
+            console.log(res);
+        })
+        console.log(data);
+        // $('#login-form')[0].reset()
+    })
+    //检测
     $('#username').on('blur', function () {
         let data = {
             username: $('#username').val()
