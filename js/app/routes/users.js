@@ -18,7 +18,7 @@ router.post('/login', async (req, res, next) => {
 });
 router.post('/register', async (req, res, next) => {
   let arr = [req.body.username, req.body.password]
-  let sqlstr = `SELECT * FROM user WHERE username=? AND password=?`
+  let sqlstr = ``
   let data = await miziquery(sqlstr, arr)
   if (data.length > 0) {
     res.send('登录成功');
